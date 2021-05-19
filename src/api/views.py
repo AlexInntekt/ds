@@ -1,22 +1,22 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import permission_classes
 
+from django.contrib.auth.models import User
 
+from .serializers.serializers import UserSerializer
 
+@permission_classes([IsAuthenticated])
 class UsersView(APIView):
 
-    def get(self, request, *args, **kwargs):
+	serializer_class = UserSerializer
 
-      # file_serializer = BinaryCompanySerializer(data=request.data)
+	def get(self, request, *args, **kwargs):
+		users = User.objects.all()
+		self.response_list = self.serializer_class(users, many=True).data
+		return Response(self.response_list, status=200)
 
-      # validate serializer and then return SUCCES or FAILURE
-      # if file_serializer.is_valid():
-      #     file_serializer.save()
-      #     return Response(file_serializer.data, status=status.HTTP_201_CREATED)
-      # else:
-      #     return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-      return Response("Werks", status=200)
 
 
