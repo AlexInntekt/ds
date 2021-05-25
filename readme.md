@@ -1,3 +1,9 @@
+### Install    
+python3 src/manage.py migrate     
+pip install -r req.txt   
+python3 src/manage.py runserver     
+     
+
 ### Authentication endpoints
 
 `POST http://127.0.0.1:8000/api/v1/rest-auth/login/`
