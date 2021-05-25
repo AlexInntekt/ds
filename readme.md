@@ -1,6 +1,6 @@
 ### Install    
-python3 src/manage.py migrate     
 pip install -r req.txt   
+python3 src/manage.py migrate     
 python3 src/manage.py runserver     
      
 
