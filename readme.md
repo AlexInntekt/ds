@@ -1,3 +1,11 @@
+### How to run the project
+```
+python3.8 src/manage.py migrate
+python3.8 src/manage.py runserver
+```
+
+
+
 ### Authentication endpoints
 
 `POST http://127.0.0.1:8000/api/v1/rest-auth/login/`
@@ -14,7 +22,6 @@
 	"email":"test@domain.g"  
 }   
 
-`POST `
    
 ### Protected with token:      
 `GET http://127.0.0.1:8000/api/v1/users`     
