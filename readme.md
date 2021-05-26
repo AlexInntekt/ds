@@ -1,9 +1,10 @@
-### How to run the project
-```
-python3.8 src/manage.py migrate
-python3.8 src/manage.py runserver
-```
 
+### How to run the project
+
+### Install    
+pip install -r req.txt   
+python3 src/manage.py migrate     
+python3 src/manage.py runserver     
 
 
 ### Authentication endpoints
